@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="view"
+            type="br.com.supermarket.listacompras.ui.viewmodel.ListaDeComprasViewModel" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -24,6 +30,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textAlignment="textStart"
+                android:text="@{}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

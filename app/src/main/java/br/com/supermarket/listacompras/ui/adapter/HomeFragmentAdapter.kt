@@ -14,15 +14,12 @@ import br.com.supermarket.listacompras.model.ItemDeCompra
 class HomeFragmentAdapter(
     private val context: Context
 ): ListAdapter<ItemDeCompra, HomeFragmentAdapter.ViewHolder>(DiffCallback) {
-    init {
-        Log.i("Adapter","init chamado")
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater= LayoutInflater.from(context)
         val viewBinding = ItemListaBinding.inflate(inflater, parent, false)
-//        return ViewHolder.from(parent)
-        return ViewHolder(viewBinding)
+        return ViewHolder.from(parent)
+//        return ViewHolder(viewBinding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -38,6 +35,9 @@ class HomeFragmentAdapter(
             item: ItemDeCompra
         ){
             binding.nomeItem.text = item.nome
+            binding.valorDinheiro.text = item.quantidade.toString()
+            binding.quantidadeNumero.text = item.quantidade.toString()
+
         }
         companion object{
             fun from(parent: ViewGroup): ViewHolder{
